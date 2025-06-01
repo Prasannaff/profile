@@ -6,6 +6,25 @@
   margin: 0;
   padding: 0;
 }
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00f2ff;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode a {
+  color: #000000;
+}
+
 
 body {
   font-family: "Poppins", sans-serif;
@@ -104,6 +123,8 @@ a:hover {
   transition: all 0.3 ease-in-out;
 }
 
+
+
 .menu-links a {
   display: block;
   padding: 10px;
@@ -150,11 +171,10 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  margin: 0 10rem 6rem 10rem; /* add bottom margin */
   box-sizing: border-box;
-  min-height: fit-content;
 }
+
 
 .section-container {
   display: flex;
@@ -228,6 +248,11 @@ section {
   width: 8rem;
   border-radius: 2rem;
 }
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 .btn-color-1,
 .btn-color-2 {
@@ -250,7 +275,7 @@ section {
 }
 
 .btn-color-2 {
-  background: none;
+  background: rgb(255, 255, 255);
 }
 
 .btn-color-2:hover {
@@ -325,6 +350,7 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .experience-details-container {
@@ -429,4 +455,248 @@ footer {
 
 footer p {
   text-align: center;
+}
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  padding: 0.8rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.02);
+  background-color: #e0f7fa;
+}
+
+/* DARK MODE STYLING */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode a,
+body.dark-mode li {
+  color: #ffffff;
+}
+
+body.dark-mode .details-container {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .project-title,
+body.dark-mode .experience-sub-title {
+  color: #ffffff;
+}
+
+body.dark-mode .btn-color-1,
+body.dark-mode .btn-color-2 {
+  border-color: #ffffff;
+}
+
+body.dark-mode .btn-color-1:hover,
+body.dark-mode .btn-color-2:hover {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* Dark Mode Toggle Switch */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+#darkModeToggle {
+  display: none;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background: #000000;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-switch::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+#darkModeToggle:checked + .toggle-switch {
+  background: #959595;
+}
+
+#darkModeToggle:checked + .toggle-switch::before {
+  transform: translateX(20px);
+}
+
+body.dark-mode .icon {
+  filter: invert(1);
+}
+
+
+/* Hamburger menu lines in dark mode */
+body.dark-mode .hamburger-icon span {
+  background-color: white;
+}
+
+/* Optional: dark menu dropdown background */
+body.dark-mode .menu-links {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .menu-links a {
+  color: white;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-top: 2rem;
+}
+
+.project-card-link {
+  text-decoration: none;
+  width: 32%;
+  display: block;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  color: black;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #555;
+}
+
+body.dark-mode .project-card {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+.project-card-link,
+.project-card-link:hover,
+.project-card-link:focus,
+.project-card-link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* 
+@media screen and (max-width: 900px) {
+  .project-card-link {
+    width: 90%;
+  }
+} */
+.skills-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: #ffffff;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 32%;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  color: #555;
+}
+
+.skill-list li {
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .skill-card {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+body.dark-mode .skill-list li {
+  color: #ccc;
+}
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 1.5rem; /* adjust as needed */
 }
